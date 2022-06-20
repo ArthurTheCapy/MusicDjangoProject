@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class Track(models.Model):
     title = models.CharField(max_length=50)
-    author = models.CharField(Author, on_delete=models.CASCADE)
+    author = models.CharField(max_length=50)
     description = models.TextField()
 
 
@@ -14,7 +14,7 @@ class Author(models.Model):
     band_name = models.CharField(max_length=50)
 
 
-class Albums(models.Model):
+class Album(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     album_name = models.CharField(max_length=100)
     release_date = models.DateField()
