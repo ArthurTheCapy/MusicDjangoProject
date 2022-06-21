@@ -11,3 +11,9 @@ p {
   font-family: verdana;
   font-size: 20px;
 }
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}

@@ -2,17 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %}
     <title>CapybaraMusic</title>
-    <link rel="stylesheet" href="style.css" />
+    {% endblock %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'static/styles.css' %}">
 </head>
 <body>
-<h1> Capybara Music </h1>
-    <img src="capybara.png" alt="CapyMusic">
-    <a href="index.html">Home</a>
-    <a href="albums.html">Albums</a>
-    <a href="authors.html">Authors</a>
-    <a href="musiclabel.html">MusicLabels</a>
-    <a href="playlist.html">Playlist</a>
-    <a href="about.html">About</a>
+
+{% block content %}
+<h1>CapybaraMusic</h1>
+<p>Welcome to CapybaraMusic, a website developed by <em>Arthur Bichikovskiy</em>!</p>
+{% endblock %}
+
+{% block sidebar %}
+<ul class="sidebar-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="albums.html">Albums</a></li>
+    <li><a href="authors.html">Authors</a></li>
+    <li><a href="musiclabel.html">MusicLabels</a></li>
+    <li><a href="playlist.html">Playlist</a></li>
+    <li><a href="about.html">About</a></li>
+</ul>
+{% endblock %}
+
 </body>
 </html>
