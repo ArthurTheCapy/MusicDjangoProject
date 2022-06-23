@@ -9,7 +9,7 @@
     <title>CapybaraMusic</title>
     {% endblock %}
 
-<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"> -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 </head>
 <body>
@@ -21,18 +21,23 @@
 
 
 <ul class="sidebar-nav">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="albums.html">Albums</a></li>
-    <li><a href="authors.html">Authors</a></li>
-    <li><a href="musiclabel.html">MusicLabels</a></li>
-    <li><a href="playlist.html">Playlist</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/news/">News</a></li>
+    <li><a href="/albums/">Albums</a></li>
+    <li><a href="/authors/">Authors</a></li>
+    <li><a href="/musiclabel/">MusicLabels</a></li>
+    <li><a href="/playlist/">Playlist</a></li>
+    <li><a href="/about/">About</a></li>
 </ul>
 
-    {% for i in author %}
-        <p>{{ i.author }}</p>
-        <p>{{ i.album }}</p>
+    {% for author in author_list %}
+        <p>{{ author.band_name }}</p>
+        <ul>
+        {% for album in author.albums.all %}
+            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </li>
+
+        {% endfor %}
+        </ul>
     {% endfor %}
 
 </body>
