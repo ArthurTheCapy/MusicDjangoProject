@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from musicapp.views import index
+from musicapp.views import index, authors, musiclabel, playlist, about, news, albums
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index),
-   # path('news/', )
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
-
+                  path('admin/', admin.site.urls),
+                  path('', index),
+                  path('news/', news),
+                  path('albums/', albums),
+                  path('authors/', authors),
+                  path('musiclabel/', musiclabel),
+                  path('playlist/', playlist),
+                  path('about/', about),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

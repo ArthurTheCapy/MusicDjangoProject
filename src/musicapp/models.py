@@ -37,3 +37,12 @@ class PlayList(models.Model):
 class MusicLabel(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
+
+
+#class News(models.Models):
+#    news_title = models.ForeignKey(max_length=100)
+#    news_date = models.DateField()
+
+
+#class About(models.Models):
+#   about = models.ForeignKey(max_length=100)
