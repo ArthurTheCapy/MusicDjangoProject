@@ -2,43 +2,40 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% block title %}
     <title>CapybaraMusic</title>
-    {% endblock %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
-<body>
+<body class="active">
+    <!-- <img src="{% static 'images/capybara.png' %}" alt="CapyMusic" style="width:300px;height:300px;"> -->
+    <div class="hero">
+    <h1>Capybara Music<span>Welcome to CapybaraMusic, a website developed by Arthur Bichikovskiy</span>
+        </h1>
+    </div>
+    <div class="sidenav">
+            <span class="btn"  href="">
+                <i class="las la-bars la-2x">
+                    </i>
+                        </span>
 
-    <img src="{% static 'images/capybara.png' %}" alt="CapyMusic" style="width:300px;height:300px;">
+            <div class="items">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news/">News</a></li>
+                    <li><a href="/albums/">Albums</a></li>
+                    <li><a href="/authors/">Authors</a></li>
+                    <li><a href="/musiclabel/">MusicLabels</a></li>
+                    <li><a href="/playlist/">Playlist</a></li>
+                    <li><a href="/about/">About</a></li>
+                </ul>
+            </div>
+    </div>
 
-<h1>CapybaraMusic</h1>
-<p>Welcome to CapybaraMusic, a website developed by <em>Arthur Bichikovskiy</em>!</p>
+        <script src="static/sidebar.js"></script>
 
-
-<ul class="sidebar-nav">
-    <li><a href="/">Home</a></li>
-    <li><a href="/news/">News</a></li>
-    <li><a href="/albums/">Albums</a></li>
-    <li><a href="/authors/">Authors</a></li>
-    <li><a href="/musiclabel/">MusicLabels</a></li>
-    <li><a href="/playlist/">Playlist</a></li>
-    <li><a href="/about/">About</a></li>
-</ul>
-
-    {% for author in author_list %}
-        <p>{{ author.band_name }}</p>
-        <ul>
-        {% for album in author.albums.all %}
-            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </li>
-
-        {% endfor %}
-        </ul>
-    {% endfor %}
-
-</body
+    </body>
 </html>

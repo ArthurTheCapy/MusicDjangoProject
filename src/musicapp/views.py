@@ -10,7 +10,9 @@ def index(request):
 
 
 def albums(request):
-    return render(request, 'albums.html', {'albums': albums})
+    author_list = Author.objects.all()
+    albums = {'author_list': author_list}
+    return render(request, 'albums.html', albums)
 
 
 def authors(request):
