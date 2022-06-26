@@ -25,7 +25,6 @@ urlpatterns = [
                   path('news/', news),
                   path('albums/', albums),
                   path('authors/', authors),
-                  path('musiclabel/', musiclabel),
                   path('playlist/', playlist),
                   path('about/', about),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
