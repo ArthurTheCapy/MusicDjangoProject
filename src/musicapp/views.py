@@ -1,12 +1,11 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import Track, Author, Album
 
 
 # Create your views here.
 def index(request):
-    author_list = Author.objects.all()
-    context = {'author_list': author_list}
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {'index': index})
 
 
 def albums(request):
@@ -19,10 +18,6 @@ def authors(request):
     return render(request, 'authors.html', {'authors': authors})
 
 
-def musiclabel(request):
-    return render(request, 'musiclabel.html', {'musiclabel': musiclabel})
-
-
 def playlist(request):
     return render(request, 'playlist.html', {'playlist': playlist})
 
@@ -33,3 +28,7 @@ def about(request):
 
 def news(request):
     return render(request, 'news.html', {'news': news})
+
+
+def home(request):
+    return render(request, 'home.html', {'home': home})

@@ -14,7 +14,7 @@
 
 
 <ul class="sidebar-nav">
-    <li><a href="/">Home</a></li>
+    <li><a href="/home/">Home</a></li>
     <li><a href="/news/">News</a></li>
     <li><a href="/albums/">Albums</a></li>
     <li><a href="/authors/">Authors</a></li>
@@ -25,12 +25,12 @@
 
     {% for author in author_list %}
         <p>{{ author.band_name }}</p>
-        <ul>
+        <tr>
         {% for album in author.albums.all %}
-            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </li>
+            <td>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </td>
 
         {% endfor %}
-        </ul>
+        </tr>
     {% endfor %}
 
 </body>
