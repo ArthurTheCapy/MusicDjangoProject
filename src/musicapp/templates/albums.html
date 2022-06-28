@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Albums</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 </head>
 <body>
 <img src="{% static 'images/capybara.png' %}" alt="CapyMusic" style="width:300px;height:300px;">
@@ -25,12 +24,12 @@
 
     {% for author in author_list %}
         <p>{{ author.band_name }}</p>
-        <tr>
+        <ul>
         {% for album in author.albums.all %}
-            <td>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </td>
+            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </li>
 
         {% endfor %}
-        </tr>
+        </ul>
     {% endfor %}
 
 </body>
