@@ -26,7 +26,7 @@
         <p>{{ author.band_name }}</p>
         <ul>
         {% for album in author.albums.all %}
-            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </li>
+            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} </li>
 
         {% endfor %}
         </ul>

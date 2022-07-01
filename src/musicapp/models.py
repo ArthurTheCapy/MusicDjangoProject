@@ -19,7 +19,6 @@ class Author(models.Model):
 class Album(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="albums")
     name = models.CharField(max_length=100)
-    label = models.ForeignKey("MusicLabel", on_delete=models.CASCADE, null=True, blank=True)
     cover = models.FileField(upload_to='covers', null=True, blank=True)
     release_date = models.DateField()
     num_stars = models.PositiveSmallIntegerField()
@@ -37,12 +36,6 @@ class PlayList(models.Model):
 class MusicLabel(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
-
-
-#class News(models.Models):
-#    news_title = models.ForeignKey(max_length=100)
-#    news_date = models.DateField()
-
 
 #class About(models.Models):
 #   about = models.ForeignKey(max_length=100)

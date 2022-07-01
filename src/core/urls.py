@@ -23,7 +23,6 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('', index),
                   path('home/', home),
-                  path('news/', news),
                   path('albums/', albums),
                   path('authors/', authors),
                   path('playlist/', playlist),
