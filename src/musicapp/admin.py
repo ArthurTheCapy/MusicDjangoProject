@@ -6,4 +6,4 @@ admin.site.register(Track)
 admin.site.register(Author)
 admin.site.register(Album)
 admin.site.register(PlayList)
-admin.site.register(MusicLabel)
+
