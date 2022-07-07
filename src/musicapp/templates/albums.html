@@ -1,12 +1,6 @@
-{%load static%}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Albums</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
 <img src="{% static 'images/capybara.png' %}" alt="CapyMusic" style="width:300px;height:300px;">
 <h1>CapybaraMusic</h1>
 <p>List of authors of your favorite songs!</p>
@@ -26,11 +20,10 @@
         <p>{{ author.band_name }}</p>
         <ul>
         {% for album in author.albums.all %}
-            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  {{ album.name }} ({{album.label.name}}) </li>
+            <li>{% if album.cover  %}<img src="{{album.cover.url}}" style="width:150px;height:150px;"> {% endif %}  <a href="/album/{{album.id}}/">{{ album.name }}</a> ({{album.label.name}}) </li>
 
         {% endfor %}
         </ul>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}

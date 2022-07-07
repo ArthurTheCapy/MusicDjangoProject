@@ -5,6 +5,7 @@ from django.db import models
 class Track(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
+    album = models.ForeignKey('Album', on_delete=models.CASCADE, related_name="tracks")
 
 
 class Author(models.Model):

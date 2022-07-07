@@ -1,20 +1,5 @@
+{% extends 'base.html' %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-</head>
-<body>
-<tr>
-    <td><a href="/">Start</a></td>
-    <td><a href="/news/">News</a></td>
-    <td><a href="/albums/">Albums</a></td>
-    <td><a href="/authors/">Authors</a></td>
-    <td><a href="/playlist/">Playlist</a></td>
-    <td><a href="/about/">About</a></td>
-</tr>
-</body>
-</html>
+{% block content %}
+Стартовая страница
+{% endblock %}

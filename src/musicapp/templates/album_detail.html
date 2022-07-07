@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <h1>{{ album.name }}</h1>
+    <p>{{ album.release_date }}</p>
+    <p>{{ album.author }}</p>
+    <img src="{{album.cover.url}}" style="width:150px;height:150px;">
+    {% for track in album.tracks.all %}
+        <p>{{ forloop.counter }}. {{track.title}}</p>
+    {% endfor %}
+{% endblock %}
